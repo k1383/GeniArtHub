@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/2bb90c57b5.js" crossorigin="anonymous"></script> <!-- Font awesome -->
     <title>Document</title>
 </head>
-<body>
+<body class="page">
+
+    <header>
+        <div>
+            <a href="index.html">
+                <img src="img/logo-black.png" alt="Logo GeniArtHub version sombre">
+            </a>
+            <a href="cart.html"><img src="img/cart.svg" alt="Aller au panier"></a>
+        </div>
+    </header>
 
     <main>
 
@@ -18,12 +27,12 @@
                 <div id="Div-3">
                     
                     <div class="form-group">
-                        <label for="firstname">Prénom</label>
+                        <label for="firstname">Prénom : </label>
                         <input type="text" id="firstname" name="firstname" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="name">Nom</label>
+                        <label for="name">Nom : </label>
                         <input type="text" id="name" name="name" required>
                     </div>
                 </div>
@@ -31,25 +40,25 @@
                 <div id="Div-3">
                     
                     <div class="form-group">
-                        <label for="text">Adresse</label>
+                        <label for="text">Adresse : </label>
                         <input type="text" id="Adresse" name="Adresse" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="text">Ville</label>
+                        <label for="text">Ville : </label>
                         <input type="text" id="Ville" name="Ville" required>
                     </div>
                 </div>
 
                 <div id="Div-3">
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">Email : </label>
                         <input type="email" id="email" name="email" required>
                     </div>
                 </div>
 
                 <div id="Div-4">
-                    <label for="message">Message</label>
+                    <label for="message">Message : </label>
                     <textarea id="message" name="message" required></textarea>
                 </div>
 
@@ -58,12 +67,16 @@
                     <label for="checkbox">J'accepte que mes données soient traitées conformément à la politique deconfidentialité. Elles ne seront utilisées que pour répondre à ma demande.</label>
                 </div> -->
 
-                <button id="submit" type="submit">commandez</button>
+                <button id="submit" type="submit">Passer commande</button>
                
             </form>
         </section>
 
     </main>
+
+    <!-- <footer>
+        <p><a href="https://www.errantecreation.com/">Errante Creation</a> © 2023 - GeniArtHub</p>
+    </footer> -->
 
     <script src="js/cart.js"></script>
 </body>

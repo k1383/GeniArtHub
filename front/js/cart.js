@@ -18,29 +18,38 @@ myForm.addEventListener('submit', (e) => {
     //* Prénom 
 
     if (specialCharacters.test(firstnameInput.value)) {  //* Test si il y a des caractères spéciaux
-        alert("Le nom ne doit pas contenir de caractères spéciaux.");
-    } if (firstnameInput.value.length < 2){  //* Vérifie si le Prénom a minimum 2 lettres
-        alert("Le nom doit contenir plus de 2 caractères");
-    } else {
-        console.log("validé");
-    }
+        alert("Le prénom ne doit pas contenir de caractères spéciaux.");
+        return;
+    } else if (firstnameInput.value.length < 2) {  //* Vérifie si le Prénom a minimum 2 lettres
+        alert("Le prénom doit contenir plus de 2 caractères");
+        return;
+    } 
 
     //* Nom
 
     if (specialCharacters.test(nameInput.value)) {  //* Test si il y a des caractères spéciaux
         alert("Le nom ne doit pas contenir de caractères spéciaux.");
-    } if (nameInput.value.length < 2){  //* On vérifie si le Nom a minimum 2 lettres
+        return;
+    } else if (nameInput.value.length < 2) {  //* On vérifie si le Nom a minimum 2 lettres
         alert("Le nom doit contenir plus de 2 caractères");
-    } else {
-        console.log("validé");
-    }
+        return;
+    } 
 
     //* Adresse
 
-    if(AdresseInput.length = 10 ){  //* On vérifie si adresse a au moins 10 caractères
-        alert("error");
-    } else {
-        console.log("validé");
+    if(AdresseInput.value.length < 10 ) {  //* On vérifie si adresse a au moins 10 caractères
+        alert("Doit contenir au moins 10 caractères");
+        return;
+    } 
+
+    //* Ville 
+
+    if (VilleInput.value.length < 3) {
+        alert("Doit contenir plus de 3 caractères");
+        return;  
+    } else if (numbers.test(VilleInput.value)) {
+        alert("Ne doit pas contenir de chiffres");
+        return;
     }
 
     //* Email 
@@ -59,3 +68,6 @@ myForm.addEventListener('submit', (e) => {
     }
 
 })
+
+//* Empêchent la suite du code de s’exécuter après une erreur
+//* Empêchent d’afficher plusieurs alertes en même temps

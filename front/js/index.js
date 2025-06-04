@@ -18,7 +18,7 @@ function Dataproductlist(products) {
         const template =
         `<article>
             <img src="${product.image}" alt="Titre produit">
-            <a href="products.html?id=${product.shorttitle}">Buy ${product.shorttitle}</a>
+            <a href="product.html">Buy ${product.shorttitle}</a>
         </article> `;
         const section = document.querySelector('.products')
         section.insertAdjacentHTML('beforeend', template)
@@ -28,3 +28,4 @@ function Dataproductlist(products) {
   
 
 
+//products.html?id=${product.shorttitle}
