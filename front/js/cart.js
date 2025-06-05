@@ -5,18 +5,12 @@ const myForm = document.getElementById('myForm')
 myForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const firstnameInput = document.getElementById('firstname')  //* Prénom
-    const nameInput = document.getElementById('name')  //* Nom
-    const AdresseInput = document.getElementById('Adresse')  //* Adresse
-    const VilleInput = document.getElementById('Ville')  //* Ville
-    const EmailInput = document.getElementById('email')  //* Email
     const specialCharacters = /[0-9+=@*/%£¤&~{}<>:;?,!§]/;  //* Caractère spéciaux
     const numbers = /[0-9]/;  //* Seulement les chiffres 
 
-    //* .test() Permet de tester si un motif est présent
-
     //* Prénom 
 
+    const firstnameInput = document.getElementById('firstname')
     if (specialCharacters.test(firstnameInput.value)) {  //* Test si il y a des caractères spéciaux
         alert("Le prénom ne doit pas contenir de caractères spéciaux.");
         return;
@@ -27,6 +21,7 @@ myForm.addEventListener('submit', (e) => {
 
     //* Nom
 
+    const nameInput = document.getElementById('name')
     if (specialCharacters.test(nameInput.value)) {  //* Test si il y a des caractères spéciaux
         alert("Le nom ne doit pas contenir de caractères spéciaux.");
         return;
@@ -37,23 +32,26 @@ myForm.addEventListener('submit', (e) => {
 
     //* Adresse
 
+    const AdresseInput = document.getElementById('Adresse')
     if(AdresseInput.value.length < 10 ) {  //* On vérifie si adresse a au moins 10 caractères
-        alert("Doit contenir au moins 10 caractères");
+        alert("L'adresse doit contenir au moins 10 caractères");
         return;
     } 
 
     //* Ville 
 
+    const VilleInput = document.getElementById('Ville')
     if (VilleInput.value.length < 3) {
-        alert("Doit contenir plus de 3 caractères");
+        alert("Ville doit contenir plus de 3 caractères");
         return;  
     } else if (numbers.test(VilleInput.value)) {
-        alert("Ne doit pas contenir de chiffres");
+        alert("Ville ne doit pas contenir de chiffres");
         return;
     }
 
     //* Email 
 
+    const EmailInput = document.getElementById('email')
     function valideEmail(Email) {
         const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         return regex.test(Email);
@@ -69,5 +67,5 @@ myForm.addEventListener('submit', (e) => {
 
 })
 
-//* Empêchent la suite du code de s’exécuter après une erreur
-//* Empêchent d’afficher plusieurs alertes en même temps
+//* Return → Empêchent la suite du code de s’exécuter après une erreur, Empêchent d’afficher plusieurs alertes en même temps
+//* .test() Permet de tester si un motif est présent

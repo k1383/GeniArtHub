@@ -19,12 +19,21 @@
     </header>
 
     <main>
-
-        <section id="Contact"> <!-- Section 1  To contact me -->
+        <section id="Panier"> <!-- Section 1 Panier -->
+            <h1>Votre panier</h1>
             
-            <form class="container" action="#" method="post" id="myForm">
+            <article>
 
-                <div id="Div-3">
+            </article>
+            
+        </section>
+
+        <section id="Contact"> <!-- Section 2  To contact me -->
+            <h2>Formulaire de commande</h2>
+            <hr>
+            <form action="#" method="POST" id="myForm">
+
+                <div class="Div-1">
                     
                     <div class="form-group">
                         <label for="firstname">Prénom : </label>
@@ -37,7 +46,7 @@
                     </div>
                 </div>
 
-                <div id="Div-3">
+                <div class="Div-1">
                     
                     <div class="form-group">
                         <label for="text">Adresse : </label>
@@ -50,22 +59,12 @@
                     </div>
                 </div>
 
-                <div id="Div-3">
+                <div class="Div-1">
                     <div class="form-group">
                         <label for="email">Email : </label>
                         <input type="email" id="email" name="email" required>
                     </div>
                 </div>
-
-                <div id="Div-4">
-                    <label for="message">Message : </label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-
-                <!-- <div id="Div-5">
-                    <input type="checkbox" id="checkbox" name="checkbox" required>
-                    <label for="checkbox">J'accepte que mes données soient traitées conformément à la politique deconfidentialité. Elles ne seront utilisées que pour répondre à ma demande.</label>
-                </div> -->
 
                 <button id="submit" type="submit">Passer commande</button>
                
@@ -74,9 +73,9 @@
 
     </main>
 
-    <!-- <footer>
+    <footer>
         <p><a href="https://www.errantecreation.com/">Errante Creation</a> © 2023 - GeniArtHub</p>
-    </footer> -->
+    </footer>
 
     <script src="js/cart.js"></script>
 </body>

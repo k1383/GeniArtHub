@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rum+Raisin&family=Source+Sans+3:wght@400;900&display=swap');
+:root {
+    --Rum-Raisin : "Rum Raisin", sans-serif;
+}
 html {
     --scroll-behavior: smooth;
     scroll-behavior: smooth;
@@ -277,4 +280,65 @@ article > div > div.price > p {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+
+/* Page panier */
+#Panier h1 {
+      font-family: var(--Rum-Raisin);
+    font-weight: 400;
+    font-size: 36px;
+    text-align: center;
+}
+
+/* Form */
+
+hr {
+    border: #EE7F43 1px solid;
+    max-width: 1440px;
+    margin:10px auto;
+}
+#Contact h2 {
+    font-family: var(--Rum-Raisin);
+    font-weight: 400;
+    font-size: 36px;
+    text-align: center;
+}
+form {
+    width: 672px;
+    height: 498px;
+}
+form label {
+    font-weight: 400;
+    font-size: 32px;  
+    margin: 10px 0;
+}
+form input  {
+    border: 1px solid black;
+    width: 700px;
+    height: 50px;
+}
+#submit {
+    background-color: #EE7F43;
+    border: none;
+    color: white;
+    font-family: var(--);
+    font-weight: 900;
+    font-size: 32px;
+    width: 350.55px;
+    height: 65.3px;
+    margin: 50px 500px;
+    &:hover {
+        color: white;
+        background-color: #2D3047;
+    }
+}
+.Div-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 30px 0;
+    gap: 30px;
+} 
+#myForm {
+    margin: 40px 225px;
 }
