@@ -34,7 +34,7 @@ myForm.addEventListener('submit', (e) => {
 
     const AdresseInput = document.getElementById('Adresse')
     if(AdresseInput.value.length < 10 ) {  //* On vérifie si adresse a au moins 10 caractères
-        alert("L'adresse doit contenir au moins 10 caractères");
+        alert("L'adresse doit contenir au moins 10 caractères");  //*  voir pour changer l'alerte avec champs adresse et faire plus propre 
         return;
     } 
 

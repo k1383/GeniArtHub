@@ -2,7 +2,7 @@ async function init() {
   const products = await getproduct()  
   Dataproductlist(products)
 }
-init()
+init() 
 
 async function getproduct() {
   try {
@@ -15,15 +15,12 @@ async function getproduct() {
   
 function Dataproductlist(products) {
   for (const product of products) {
-    const template = `<article>
-      <img src="${product.image}" alt="${product.title}">
+    const template =
+    `<article>
+      <img src="${product.image}" alt="Titre produit">
       <a href="product.html?id=${product._id}">${product.shorttitle}</a>
     </article> `;
     const section = document.querySelector(".products");
     section.insertAdjacentHTML("beforeend", template);
-    // console.log(product)
   }
 }
-
-
-//products.html?id=${product.shorttitle}

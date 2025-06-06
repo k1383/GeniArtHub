@@ -21,20 +21,47 @@ async function getdetailoeuvre() {
 }
 
 function Datadetailoeuvre(detailoeuvre) {
-  const {shorttitle, titre, description, image} = detailoeuvre;
+  const {image, titre, description,shorttitle, declinaisons} = detailoeuvre;
   document.querySelector(".detailoeuvre img").src = image;
   document.querySelector(".detailoeuvre h1").textContent = titre;
-  document.querySelector(".detailoeuvre div p").textContent = description.substring(0,250);  //* La substring() méthode renvoie une sous-chaîne de la chaîne / crée une nouvelle chaîne de caractères / commence a 0
+  document.querySelector(".detailoeuvre div p").textContent = description.substring(0,250);  
+  //* substring() méthode qui renvoie une sous-chaîne de la chaîne / crée une nouvelle chaîne de caractères / substring(debut, fin)
   document.querySelector(".detailoeuvre a").textContent = `buy ${shorttitle}`;
   document.querySelector(".detailoeuvre h2").textContent = `Description de l’oeuvre : ${titre}`;  
   document.querySelector("aside").insertAdjacentHTML("afterend",`<p>${description}</p>`);
+  document.querySelector(".showprice").textContent = `${declinaisons[0].prix}€`;
+
+  //* Afficher les format dans une liste déroulante
+
+  const select = document.querySelector("select");
+  declinaisons.forEach((format) => {
+    const {taille} = format;
+    const option = 
+    `<option 
+      value="${taille}">Format : ${taille}
+    </option>`;
+    select.insertAdjacentHTML("beforeend", option);
+  });
+
+  //* Gérer les formats et les prix
+  
+  select.addEventListener('change',(e) => {   //* "change" se déclenche quand l'utilisateur modifie la valeur de l'élément et sort du champ
+    e.preventDefault();
+    const taille = e.target.value;
+    const prix = declinaisons.find(element => element.taille == taille)
+    if (prix)                                       
+    document.querySelector(".showprice").textContent = `${prix.prix}€`;
+  })
+
 }
 
 //* Gérer la quantité 
 
 const quantity = document.getElementById('quantity');
-if (quantity.value < 1) {
-  quantity.value = 1;
-} else if (quantity.value > 100) {
-  quantity.value = 100;
-}
+quantity.addEventListener('change', () => {
+  if (quantity.value < 1) {
+    alert("Commander au moins une oeuvre");
+  } else if (quantity.value > 100) {
+    alert("Vous ne pouvez pas commander plus de 100 oeuvres");
+  }
+});
