@@ -1,4 +1,19 @@
-/* Form */ 
+//* Récupérer les éléments ajoutés par l'utilisateur dans son panier
+
+function afficherProduit() {
+    const Elementpanier =
+    `<article>
+      <img src="${image}" alt="Titre produit">
+      <h2>${titre}</h2>
+      <p>${format}</p>
+      <p>${prix}</p>
+      <p>${qunatité}</p>
+    </article> `;
+    const section = document.querySelector(".Elementpanier");
+    section.insertAdjacentHTML("beforeend", Elementpanier);
+}
+
+//* Form 
 
 const myForm = document.getElementById('myForm')
 

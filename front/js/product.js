@@ -1,5 +1,3 @@
-//* Récupération du titre, la description, le prix, le format et ajout d'une description complète
-
 //* récupérer directement l'id a l'url
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -19,6 +17,8 @@ async function getdetailoeuvre() {
     console.error("error");
   }
 }
+
+//* Récupération du titre, la description, le prix, le format et ajout d'une description complète
 
 function Datadetailoeuvre(detailoeuvre) {
   const {image, titre, description,shorttitle, declinaisons} = detailoeuvre;
@@ -44,7 +44,7 @@ function Datadetailoeuvre(detailoeuvre) {
   });
 
   //* Gérer les formats et les prix
-  
+
   select.addEventListener('change',(e) => {   //* "change" se déclenche quand l'utilisateur modifie la valeur de l'élément et sort du champ
     e.preventDefault();
     const taille = e.target.value;
@@ -65,3 +65,21 @@ quantity.addEventListener('change', () => {
     alert("Vous ne pouvez pas commander plus de 100 oeuvres");
   }
 });
+
+//* Récupération des éléments sélectionnés par l'utilisateur afin de les ajouter au panier
+
+const buyButton = document.querySelector(".button-buy");
+
+buyButton.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const image = document.querySelector(".detailoeuvre img").src;
+  const titre = document.querySelector(".detailoeuvre h1").textContent;
+  const format = document.querySelector("#format").value;
+  const prix = document.querySelector(".showprice").textContent;
+  const quantité = document.getElementById('quantity').value;
+
+  alert("Votre produit a bien été ajouter au panier");
+})
+
+//* faire en sorte que mes élement arrive au panier 
