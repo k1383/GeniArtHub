@@ -69,17 +69,22 @@ quantity.addEventListener('change', () => {
 //* Récupération des éléments sélectionnés par l'utilisateur afin de les ajouter au panier
 
 const buyButton = document.querySelector(".button-buy");
-
 buyButton.addEventListener("click", (e) => {
   e.preventDefault();
-
+  
   const image = document.querySelector(".detailoeuvre img").src;
   const titre = document.querySelector(".detailoeuvre h1").textContent;
   const format = document.querySelector("#format").value;
   const prix = document.querySelector(".showprice").textContent;
   const quantité = document.getElementById('quantity').value;
 
+  const produit = {image, titre, format, prix, quantité};
+
+  const panier = JSON.parse(localStorage.getItem("panier")) || [];
+  panier.push(produit);
+  localStorage.setItem("panier", JSON.stringify(panier));
+
+  //* Récuperation des produit , on pousse les produits dans le tableau vide 
+
   alert("Votre produit a bien été ajouter au panier");
 })
-
-//* faire en sorte que mes élement arrive au panier 

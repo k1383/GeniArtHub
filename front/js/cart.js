@@ -1,17 +1,26 @@
 //* Récupérer les éléments ajoutés par l'utilisateur dans son panier
 
-function afficherProduit() {
-    const Elementpanier =
-    `<article>
+const panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+function afficherProduit(produit) {
+  const { image, titre, format, prix, quantité } = produit;
+
+  const Elementpanier = `
+    <article>
       <img src="${image}" alt="Titre produit">
       <h2>${titre}</h2>
-      <p>${format}</p>
+      <p> Format : ${format}</p>
       <p>${prix}</p>
-      <p>${qunatité}</p>
-    </article> `;
-    const section = document.querySelector(".Elementpanier");
-    section.insertAdjacentHTML("beforeend", Elementpanier);
+      <input type="number" placeholder="1" value=${quantité} min="0" max="100">
+      <p class="delete">Supprimer</p>
+    </article>`;
+  
+  const section = document.querySelector(".Elementpanier");
+  section.insertAdjacentHTML("beforeend", Elementpanier);
+
 }
+
+panier.forEach(afficherProduit);
 
 //* Form 
 
@@ -71,9 +80,7 @@ myForm.addEventListener('submit', (e) => {
         const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         return regex.test(Email);
     }
-
     const email = EmailInput.value;
-
     if(valideEmail(email)){
         console.log("validé");
     } else {
