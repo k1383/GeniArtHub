@@ -5,8 +5,8 @@ const panier = JSON.parse(localStorage.getItem("panier")) || [];
 function afficherProduit(produit) {
   const { image, titre, format, prix, quantité } = produit;
 
-  const Elementpanier = `
-    <article>
+    const Elementpanier = 
+    ` <article>
       <img src="${image}" alt="Titre produit">
       <h2>${titre}</h2>
       <p> Format : ${format}</p>
@@ -15,12 +15,10 @@ function afficherProduit(produit) {
       <p class="delete">Supprimer</p>
     </article>`;
   
-  const section = document.querySelector(".Elementpanier");
-  section.insertAdjacentHTML("beforeend", Elementpanier);
-
+    const section = document.querySelector(".Elementpanier");
+    section.insertAdjacentHTML("beforeend", Elementpanier);
 }
-
-panier.forEach(afficherProduit);
+panier.forEach(afficherProduit);  //* permet d'ajouter les éléments choisie par l'utilisateur de product.js dans cart.js
 
 //* Form 
 
@@ -73,7 +71,7 @@ myForm.addEventListener('submit', (e) => {
         return;
     }
 
-    //* Email 
+    //* Email, vérifie si l’email saisi par l’utilisateur est correct, sinon on affiche "Error mail"
 
     const EmailInput = document.getElementById('email')
     function valideEmail(Email) {

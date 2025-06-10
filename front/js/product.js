@@ -1,13 +1,17 @@
-//* récupérer directement l'id a l'url
+//* Récup l’id dans l’URL de la page
 
-const urlParams = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(window.location.search);  
 const id = urlParams.get("id");
+
+//* je recup mes produit de l'api avec getdetailoeuvre et je les affiche avec Datadetailoeuvre
 
 async function init() {
   const detailoeuvre = await getdetailoeuvre()  
   Datadetailoeuvre(detailoeuvre)
 }
 init()
+
+//* Fonction async qui envoie une requête à l'apiI pour récupérer les données d'un seul produit grâce a l'id à la fin de l'url, le try catch affiche "error" dans la console si la requête échoue
 
 async function getdetailoeuvre() {
   try {
@@ -25,7 +29,7 @@ function Datadetailoeuvre(detailoeuvre) {
   document.querySelector(".detailoeuvre img").src = image;
   document.querySelector(".detailoeuvre h1").textContent = titre;
   document.querySelector(".detailoeuvre div p").textContent = description.substring(0,250);  
-  //* substring() méthode qui renvoie une sous-chaîne de la chaîne / crée une nouvelle chaîne de caractères / substring(debut, fin)
+  //* substring() va me permettre de gérer les chaines de caractères /  substring(debut, fin)
   document.querySelector(".detailoeuvre a").textContent = `buy ${shorttitle}`;
   document.querySelector(".detailoeuvre h2").textContent = `Description de l’oeuvre : ${titre}`;  
   document.querySelector("aside").insertAdjacentHTML("afterend",`<p>${description}</p>`);
@@ -48,11 +52,10 @@ function Datadetailoeuvre(detailoeuvre) {
   select.addEventListener('change',(e) => {   //* "change" se déclenche quand l'utilisateur modifie la valeur de l'élément et sort du champ
     e.preventDefault();
     const taille = e.target.value;
-    const prix = declinaisons.find(element => element.taille == taille)
+    const prix = declinaisons.find(element => element.taille == taille)  //* .find() : c’est une méthode JavaScript qui cherche le premier élément du tableau qui respecte une condition.
     if (prix)                                       
     document.querySelector(".showprice").textContent = `${prix.prix}€`;
   })
-
 }
 
 //* Gérer la quantité 
@@ -82,7 +85,7 @@ buyButton.addEventListener("click", (e) => {
 
   const panier = JSON.parse(localStorage.getItem("panier")) || [];
   panier.push(produit);
-  localStorage.setItem("panier", JSON.stringify(panier));
+  localStorage.setItem("panier", JSON.stringify(panier));  //* mettre à jour le loccalStorage avec les nouvelles donnéees
 
   //* Récuperation des produit , on pousse les produits dans le tableau vide 
 
