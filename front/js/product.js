@@ -11,7 +11,7 @@ async function init() {
 }
 init()
 
-//* Fonction async qui envoie une requête à l'apiI pour récupérer les données d'un seul produit grâce a l'id à la fin de l'url, le try catch affiche "error" dans la console si la requête échoue
+//* Fonction async qui envoie une requête à l'api pour récupérer les données d'un seul produit grâce a l'id à la fin de l'url, le try catch affiche "error" dans la console si la requête échoue
 
 async function getdetailoeuvre() {
   try {

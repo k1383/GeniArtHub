@@ -3,7 +3,7 @@
 const panier = JSON.parse(localStorage.getItem("panier")) || [];
 
 function afficherProduit(produit) {
-  const { image, titre, format, prix, quantité } = produit;
+  const {image, titre, format, prix, quantité} = produit;
 
     const Elementpanier = 
     ` <article>
@@ -12,13 +12,13 @@ function afficherProduit(produit) {
       <p> Format : ${format}</p>
       <p>${prix}</p>
       <input type="number" placeholder="1" value=${quantité} min="0" max="100">
-      <p class="delete">Supprimer</p>
+      <a href="">Supprimer</a>
     </article>`;
   
     const section = document.querySelector(".Elementpanier");
     section.insertAdjacentHTML("beforeend", Elementpanier);
 }
-panier.forEach(afficherProduit);  //* permet d'ajouter les éléments choisie par l'utilisateur de product.js dans cart.js
+panier.forEach(afficherProduit);  //* permet d'ajouter les éléments choisie par l'utilisateur de product dans cart
 
 //* Form 
 
@@ -56,7 +56,7 @@ myForm.addEventListener('submit', (e) => {
 
     const AdresseInput = document.getElementById('Adresse')
     if(AdresseInput.value.length < 10 ) {  //* On vérifie si adresse a au moins 10 caractères
-        alert("L'adresse doit contenir au moins 10 caractères");  //*  voir pour changer l'alerte avec champs adresse et faire plus propre 
+        alert("L'adresse doit contenir au moins 10 caractères");  
         return;
     } 
 

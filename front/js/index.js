@@ -27,6 +27,6 @@ function Dataproductlist(products) {
       <a href="product.html?id=${product._id}">${product.shorttitle}</a>
     </article> `;
     const section = document.querySelector(".products");
-    section.insertAdjacentHTML("beforeend", template);
+    section.insertAdjacentHTML("beforeend", template);  //* Dans l'élément sélectionné, à la fin de l'élément 
   }
 }
