@@ -120,3 +120,7 @@ Le serveur back nécessite NodeJS pour fonctionner. Vous devez vous positionner 
 Une fois les dépendances installées, vous n'avez plus besoin de relancer la commande d'installation. Vous devez lancer le serveur en utilisant la commande « node server ».
 
 À chaque fois que vous devez travailler sur le projet, n'oubliez pas de lancer le serveur avec la commande « node server ».
+
+"back" clic droit "ouvrir dans le terminal intégré"  
+npm install
+node server
