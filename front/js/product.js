@@ -25,7 +25,7 @@ async function getdetailoeuvre() {
 //* Récupération du titre, la description, le prix, le format et ajout d'une description complète
 
 function Datadetailoeuvre(detailoeuvre) {
-  const {image, titre, description,shorttitle, declinaisons} = detailoeuvre;
+  const {image, titre, description, shorttitle, declinaisons} = detailoeuvre;
   document.querySelector(".detailoeuvre img").src = image;
   document.querySelector(".detailoeuvre h1").textContent = titre;
   document.querySelector(".detailoeuvre div p").textContent = description.substring(0,250);  

@@ -12,15 +12,26 @@ function afficherProduit(produit) {
       <p> Format : ${format}</p>
       <p>${prix}</p>
       <input type="number" placeholder="1" value=${quantité} min="0" max="100">
-      <a href="">Supprimer</a>
+      <button>Supprimer</button>
     </article>`;
-  
+
     const section = document.querySelector(".Elementpanier");
     section.insertAdjacentHTML("beforeend", Elementpanier);
+
+    //* Delete 
+
+    function DELETE() {
+        const deleteElements = document.querySelectorAll(".Elementpanier button");
+        deleteElements.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log("Produit supprimé");
+        
+        });
+    }
 }
 panier.forEach(afficherProduit);  //* permet d'ajouter les éléments choisie par l'utilisateur de product dans cart
 
-//* Form 
+//* Form
 
 const myForm = document.getElementById('myForm')
 
@@ -84,7 +95,6 @@ myForm.addEventListener('submit', (e) => {
     } else {
         alert("Error mail");
     }
-
 })
 
 //* Return → Empêchent la suite du code de s’exécuter après une erreur, Empêchent d’afficher plusieurs alertes en même temps
